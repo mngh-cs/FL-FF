@@ -1,0 +1,34 @@
+In the field of complexity analysis of methods in deep
+learning, three key items can be considered for evaluating and
+comparing the efficiency of algorithms. These items include
+MACC, activations, and RAM usage [9]. For the MNIST
+dataset, we consider that we have three layers with the size
+of 784, 500, and 500 neurons, respectively. The number of
+parameters is calculated as follows:
+
+W eights = 784 × 500 + 500 × 500 = 642000
+Biases = 500 + 500 = 1000
+P arameters = W eights + Biases = 643000
+
+In the Forward-Forward and the backpropagation algorithm,
+the activations’ size for each sample is:
+
+activationsF F = Max(784, 500, 500)
+= 784Byte ≃ 0.8KB
+
+activationsBP = 784 + 500 + 500
+= 1.784Byte ≃ 1.8KB
+
+The RAM usage of the Forward-Forward and the backprop-
+agation algorithm for each sample is:
+
+RAMF F = P arameters + activationsF F
+= 643 + 0.8 = 643.8KB
+RAMBP = P arameters + activationsBP
+= 644 + 0.8 = 644.8KB
+
+The activationsF F is less than activationsBP and this
+affects the efficiency of RAM usage in the Forward-Forward
+algorithm. For the other datasets like CIFAR10 and Fashion-
+MNIST, a similar procedure can be followed for the calcula-
+tion of the RAM usage in both algorithms.
